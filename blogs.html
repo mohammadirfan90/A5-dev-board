@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Dev Blogs</title>
+        <!-- Google Font CDN -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="crossorigin"/>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"/>
+        <!-- DaisyUI CDN -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
+            rel="stylesheet"
+            type="text/css"/>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!-- Custom font -->
+        <style>
+            .font-poppins {
+                font-family: "Poppins", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header class="container mx-auto pt-5">
+            <!-- Navbar Section -->
+            <div class="navbar bg-base-100 shadow-sm rounded-xl p-6">
+                <div class="flex-1">
+                    <a class="btn btn-ghost text-xl"><img src="assets/logo.png" alt=""/>
+                        <h1 class="font-light text-2xl md:text-4xl">
+                            Dev<span class="font-bold">Board</span>
+                        </h1>
+                    </a >
+                </div>
+
+                <div>
+                    <button
+                        onclick="window.location.href = './index.html'"
+                        class="text-white bg-blue-500 rounded-lg py-2 px-4 cursor-pointer">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto  mt-6    pb-5">
+        <div class="p-6">
+            <h3 class="font-bold text-3xl">Question 1: What are the different ways to select an element in the DOM?</h3><br>
+            <p class="text-xl">We use getElementById("id"), getElementsByClassName("class"),
+                getElementsByTagName("tag"), querySelector("selector"),
+                querySelectorAll("selector") to select an element in DOM.</p>
+        </div>
+        <div class="p-6">
+            <h3 class="font-bold text-3xl">Question 2: What is the difference between
+                innerHTML, innerText, and textContent?</h3><br>
+            <p class="text-xl">For a given node, innerHTML contains HTML tags and text
+                inside tags. innerText contains only the text inside tag that is displayed.
+                textContent is like innerText but it will text even if text is hidden.
+            </p>
+        </div>
+        <div class="p-6">
+            <h3 class="font-bold text-3xl">Question 3: What is event delegation in the DOM?</h3><br>
+            <p class="text-xl">Event delegation is a method where event listener is added to
+                a parent element, child elements events are handled using event.target.</p>
+        </div>
+        <div class="p-6">
+            <h3 class="font-bold text-3xl">Question 4: What is event bubbling in the DOM?</h3><br>
+            <p class="text-xl">We use getElementById("id"), getElementsByClassName("class"),
+                getElementsByTagName("tag"), querySelector("selector"),
+                querySelectorAll("selector") to select an element in DOM.</p>
+        </div>
+        <div class="p-6">
+            <h3 class="font-bold text-3xl">Question 5: How do you create, add, and remove elements using JavaScript?</h3><br>
+            <p class="text-xl">i. We create element using document.createElement().For example:
+                <br>
+                const newDiv = document.createElement("div");<br>
+                ii. We add element to a parent node using
+                document.parentNode.appendChild(newDiv); For example:
+                <br>
+                document.body.appendChild(newDiv);<br>
+                iii. We remove elements using newDiv.remove(); or
+                parentElement.removeChild(childElement);
+
+            </p>
+        </div>
+
+    </main>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

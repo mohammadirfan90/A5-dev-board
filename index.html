@@ -25,24 +25,24 @@
       }
     </style>
     <!-- Custom color -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: "#da373d",
-              "blue-primary": "rgba(55, 82, 253, 1)",
-              "checkbox-primary": "rgba(55, 82, 253, 1)",
-            },
-          },
-        },
-      };
-    </script>
+    <!-- <script>
+      // tailwind.config = {
+      //   theme: {
+      //     extend: {
+      //       colors: {
+      //         clifford: "#da373d",
+      //         "blue-primary": "rgba(55, 82, 253, 1)",
+      //         "checkbox-primary": "rgba(55, 82, 253, 1)",
+      //       },
+      //     },
+      //   },
+      // };
+    </script> -->
   </head>
-  <body class="font-poppins">
-    <header class="container mx-auto">
+  <body class="font-poppins bg-base-100">
+    <header class="container mx-auto pt-5">
       <!-- Navbar Section -->
-      <div class="navbar bg-base-100 shadow-sm">
+      <div class="navbar bg-base-100 shadow-sm rounded-xl p-6">
         <div class="flex-1">
           <a class="btn btn-ghost text-xl"
             ><img src="assets/logo.png" alt="" />
@@ -60,12 +60,238 @@
               class="checkbox checkbox-primary"
             />
             <p class="text-2xl md:text-3xl font-bold" id="completed-task-count">
-              0
+              23
             </p>
           </div>
-          <div><img class="w-9 h-9" src="assets/theme-btn.png" alt="" /></div>
+          <div>
+            <img
+              onclick="setRandomBackground()"
+              class="w-9 h-9 cursor-pointer"
+              src="assets/theme-btn.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </header>
+    <main class="container mx-auto flex mt-6 flex-col md:flex-row gap-5 pb-5">
+      <!-- Left Section -->
+      <section class="bg-base-100 lg:w-3/4 p-6 rounded-xl">
+        <!-- Upper Div -->
+        <div
+          class="flex flex-col md:flex-row gap-4 pb-8 border border-dashed border-b-stone-400 border-t-0 border-l-0 border-r-0 justify-between"
+        >
+          <div
+            class="basis-64 flex justify-center items-center gap-4 p-7 rounded-3xl"
+          >
+            <div>
+              <input
+                id="navbar-checkbox"
+                type="checkbox"
+                checked="checked"
+                class="checkbox checkbox-primary"
+              />
+            </div>
+            <div>
+              <h3 class="text-lg">Tasks Assigned</h3>
+              <h3 id="task-assigned-count" class="text-3xl font-bold">6</h3>
+            </div>
+          </div>
+          <div
+            onclick="window.location.href='./blogs.html'"
+            id="redirect-to-blog"
+            class="cursor-pointer basis-128 flex justify-center items-center gap-4 p-7 rounded-3xl bg-gradient-to-r from-[#3752FD] to-[#9BA8F8]"
+          >
+            <img src="assets/board.png" alt="" />
+            <h2 class="font-medium text-2xl text-white">
+              Discover Something New Today!
+            </h2>
+          </div>
+          <div
+            class="basis-64 flex justify-center items-center gap-4 p-7 rounded-3xl"
+          >
+            <div>
+              <img src="assets/calender.png" alt="" />
+            </div>
+            <div id="dynamicDate"></div>
+          </div>
+        </div>
+        <!-- Grids Div -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-8 gap-8">
+          <!-- Box 1 -->
+          <div class="p-6">
+            <p class="px-4 py-2 text-sm">ShopEase</p>
+            <h3 class="font-bold text-xl">Fix Mobile Button Issue</h3>
+            <p class="px-4 py-2 text-sm">
+              Debug using Chrome DevTools, check for overlapping elements,
+            </p>
+            <div
+              class="flex border border-dashed border-t-stone-400 border-b-0 border-r-0 border-l-0 justify-between pt-5"
+            >
+              <div>
+                <h3 class="text-sm">Deadline</h3>
+                <p class="font-bold">21 March 2025</p>
+              </div>
+              <div>
+                <button
+                  id="task-1-btn"
+                  onclick="completedTask(this.id)"
+                  class="text-white bg-blue-500 rounded-lg py-2 px-4"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Box 2 -->
+          <div class="p-6">
+            <p class="px-4 py-2 text-sm">CloudSync</p>
+            <h3 class="font-bold text-xl">Add Dark Mode</h3>
+            <p class="px-4 py-2">
+              Debug using Chrome DevTools, check for overlapping elements,
+            </p>
+            <div
+              class="flex border border-dashed border-t-stone-400 border-b-0 border-r-0 border-l-0 justify-between pt-5"
+            >
+              <div>
+                <h3 class="text-sm">Deadline</h3>
+                <p class="font-bold">21 March 2025</p>
+              </div>
+              <div>
+                <button
+                  id="task-2-btn"
+                  onclick="completedTask(this.id)"
+                  class="text-white bg-blue-500 rounded-lg py-2 px-4"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Box 3 -->
+          <div class="p-6">
+            <p class="px-4 py-2 text-sm">SwiftPay</p>
+            <h3 class="font-bold text-xl">Optimize Homepage</h3>
+            <p class="px-4 py-2">
+              Debug using Chrome DevTools, check for overlapping elements,
+            </p>
+            <div
+              class="flex border border-dashed border-t-stone-400 border-b-0 border-r-0 border-l-0 justify-between pt-5"
+            >
+              <div>
+                <h3 class="text-sm">Deadline</h3>
+                <p class="font-bold">21 March 2025</p>
+              </div>
+              <div>
+                <button
+                  id="task-3-btn"
+                  onclick="completedTask(this.id)"
+                  class="text-white bg-blue-500 rounded-lg py-2 px-4"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Box 4 -->
+          <div class="p-6">
+            <p class="px-4 py-2 text-sm">Meta</p>
+            <h3 class="font-bold text-xl">Add New Emoji🤲</h3>
+            <p class="px-4 py-2">
+              Debug using Chrome DevTools, check for overlapping elements,
+            </p>
+            <div
+              class="flex border border-dashed border-t-stone-400 border-b-0 border-r-0 border-l-0 justify-between pt-5"
+            >
+              <div>
+                <h3 class="text-sm">Deadline</h3>
+                <p class="font-bold">21 March 2025</p>
+              </div>
+              <div>
+                <button
+                  id="task-4-btn"
+                  onclick="completedTask(this.id)"
+                  class="text-white bg-blue-500 rounded-lg py-2 px-4"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Box 5 -->
+          <div class="p-6">
+            <p class="px-4 py-2 text-sm">Google LLC</p>
+            <h3 class="font-bold text-xl">Integrate OpenAPI API</h3>
+            <p class="px-4 py-2">
+              Debug using Chrome DevTools, check for overlapping elements,
+            </p>
+            <div
+              class="flex border border-dashed border-t-stone-400 border-b-0 border-r-0 border-l-0 justify-between pt-5"
+            >
+              <div>
+                <h3 class="text-sm">Deadline</h3>
+                <p class="font-bold">21 March 2025</p>
+              </div>
+              <div>
+                <button
+                  id="task-5-btn"
+                  onclick="completedTask(this.id)"
+                  class="text-white bg-blue-500 rounded-lg py-2 px-4"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Box 6 -->
+          <div class="p-6">
+            <p class="px-4 py-2 text-sm">Glassdoor</p>
+            <h3 class="font-bold text-xl">Improve Job Searching</h3>
+            <p class="px-4 py-2">
+              Debug using Chrome DevTools, check for overlapping elements,
+            </p>
+            <div
+              class="flex border border-dashed border-t-stone-400 border-b-0 border-r-0 border-l-0 justify-between pt-5"
+            >
+              <div>
+                <h3 class="text-sm">Deadline</h3>
+                <p class="font-bold">21 March 2025</p>
+                >
+              </div>
+              <div>
+                <button
+                  id="task-6-btn"
+                  onclick="completedTask(this.id)"
+                  class="text-white bg-blue-500 rounded-lg py-2 px-4"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Right Section -->
+      <section class="bg-base-100 lg:w-1/4 w-full p-6 rounded-xl">
+        <!-- Upper Div Right Section -->
+        <div
+          class="p-6 flex gap-2 items-center justify-center flex-col border border-dashed border-t-0 border-r-0 border-l-0 border-b-stone-400"
+        >
+          <div class="flex gap-2 items-center justify-center">
+            <img src="assets/activity.png" alt="" />
+            <h3>Activity Log</h3>
+          </div>
+          <button
+            onclick="clearLog()"
+            class="text-white bg-blue-500 rounded-lg py-2 px-4"
+          >
+            Clear History
+          </button>
+        </div>
+        <!-- Lower Div Dynamic Log Container -->
+        <div id="log-container" class=""></div>
+      </section>
+    </main>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
