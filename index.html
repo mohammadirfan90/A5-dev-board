@@ -4,14 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dev Board</title>
+    <!-- Google Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- DaisyUI CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Custom font -->
+    <style>
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+    <!-- Custom color -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              "blue-primary": "rgba(55, 82, 253, 1)",
+              "checkbox-primary": "rgba(55, 82, 253, 1)",
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <h1>This is Irfan</h1>
+  <body class="font-poppins">
+    <header class="container mx-auto">
+      <!-- Navbar Section -->
+      <div class="navbar bg-base-100 shadow-sm">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl"
+            ><img src="assets/logo.png" alt="" />
+            <h1 class="font-light text-2xl md:text-4xl">
+              Dev<span class="font-bold">Board</span>
+            </h1></a
+          >
+        </div>
+        <div class="flex justify-center gap-3">
+          <div class="flex justify-center items-center gap-1">
+            <input
+              id="navbar-checkbox"
+              type="checkbox"
+              checked="checked"
+              class="checkbox checkbox-primary"
+            />
+            <p class="text-2xl md:text-3xl font-bold" id="completed-task-count">
+              0
+            </p>
+          </div>
+          <div><img class="w-9 h-9" src="assets/theme-btn.png" alt="" /></div>
+        </div>
+      </div>
+    </header>
   </body>
 </html>
